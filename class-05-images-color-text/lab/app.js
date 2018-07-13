@@ -67,8 +67,6 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
   var result = [sum, product, numOne+' and ' +numTwo+ ' and ' + numThree + ' sum to ' + sum + '.', 'The product of ' + numOne + ' and ' + numTwo + ' and ' + numThree + ' is ' + product + '.'];
   return result;
 }
-console.log(sumAndMultiply(7,4,5));
-
 // Here is the test for sumAndMultiply(); uncomment it to run it
 testSumAndMultiply(4,7,5);
 
