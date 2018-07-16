@@ -58,17 +58,30 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var numOne = Number(a);
-  var numTwo = Number(b);
-  var numThree = Number(c);
-  var sum = numOne + numTwo + numThree;
-  var product = numOne * numTwo * numThree;
-  var result = [sum, product, numOne+' and ' +numTwo+ ' and ' + numThree + ' sum to ' + sum + '.', 'The product of ' + numOne + ' and ' + numTwo + ' and ' + numThree + ' is ' + product + '.'];
-  return result;
-}
-console.log(sumAndMultiply(7,4,5));
+// function sumAndMultiply(a, b, c) { //eslint-disable-line
+//   var numOne = Number(a);
+//   var numTwo = Number(b);
+//   var numThree = Number(c);
+//   var sum = numOne + numTwo + numThree;
+//   var product = numOne * numTwo * numThree;
+//   var result = [sum, product, numOne+' and ' +numTwo+ ' and ' + numThree + ' sum to ' + sum + '.', 'The product of ' + numOne + ' and ' + numTwo + ' and ' + numThree + ' is ' + product + '.'];
+//   return result;
+// }
 
+function sumAndMultiply(a, b, c) { //eslint-disable-line
+  var array = [];
+  var sumAB = sum(a, b);
+  var sumABC = sum(sumAB[0], c);
+  var sumMessage = a + ' and ' + b + ' and ' + c + ' sum to ' + sumABC[0] + '.';
+  var productOfAB = multiply(a, b);
+  var productOfABC = multiply(productOfAB[0], c);
+  var productMessage = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + productOfABC[0] + '.';
+  array.push(sumABC[0]);
+  array.push(productOfABC[0]);
+  array.push(sumMessage);
+  array.push(productMessage);
+  return array;
+}
 // Here is the test for sumAndMultiply(); uncomment it to run it
 testSumAndMultiply(4,7,5);
 
